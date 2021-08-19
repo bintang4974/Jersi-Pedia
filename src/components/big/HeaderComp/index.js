@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { IconSearch } from '../../../assets';
-import { colors, responsiveHeight } from '../../../utils';
+import { colors, fonts, responsiveHeight } from '../../../utils';
 import { Button, Gap } from '../../small';
 
 export default class HeaderComp extends Component {
@@ -41,5 +41,6 @@ const styles = StyleSheet.create({
     },
     input: {
         fontSize: 16,
+        fontFamily: fonts.primary.regular
     }
 })
