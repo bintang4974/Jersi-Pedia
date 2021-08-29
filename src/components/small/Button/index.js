@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { IconCart } from '../../../assets';
 import { colors } from '../../../utils';
+import TextOnly from './TextOnly';
 
-const Button = ({ icon, totalCart }) => {
+const Button = (props) => {
 
     const Icon = () => {
         if (icon === "cart") {
@@ -11,6 +12,12 @@ const Button = ({ icon, totalCart }) => {
         }
 
         return <IconCart />
+    }
+
+    const { icon, totalCart, type } = props;
+
+    if (type === "text") {
+        return <TextOnly {...props} />
     }
 
     return (

@@ -13,7 +13,7 @@ export const dummyLiga = [
     },
     {
         id: 3,
-        nama: "Bundes Leage",
+        nama: "Bundes League",
         gambar: BundesLiga
     },
     {

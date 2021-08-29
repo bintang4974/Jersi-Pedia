@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { BannerSlider, HeaderComp, ListLiga } from '../../components';
-import { dummyLiga } from '../../data';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { BannerSlider, Gap, HeaderComp, ListJersey, ListLiga } from '../../components';
+import { dummyJersey, dummyLiga } from '../../data';
 import { colors, fonts } from '../../utils';
 
 export default class Home extends Component {
@@ -9,21 +9,29 @@ export default class Home extends Component {
         super(props)
 
         this.state = {
-            liga: dummyLiga
+            liga: dummyLiga,
+            jersey: dummyJersey,
         }
     }
 
     render() {
-        const { liga } = this.state;
+        const { liga, jersey } = this.state;
 
         return (
             <View style={styles.page}>
-                <HeaderComp />
-                <BannerSlider />
-                <View style={styles.wrapperLiga}>
-                    <Text style={styles.label}>Pilih Liga</Text>
-                    <ListLiga ligas={liga} />
-                </View>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <HeaderComp />
+                    <BannerSlider />
+                    <View style={styles.wrapperLiga}>
+                        <Text style={styles.label}>Pilih Liga</Text>
+                        <ListLiga ligas={liga} />
+                    </View>
+                    <View style={styles.wrapperJersey}>
+                        <Text style={styles.label}>Pilih <Text style={styles.boldLabel}>Jersey</Text> Yang Anda Inginkan</Text>
+                        <ListJersey jerseys={jersey} />
+                    </View>
+                    <Gap height={100} />
+                </ScrollView>
             </View>
         )
     }
@@ -38,8 +46,16 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
         marginTop: 10
     },
+    wrapperJersey: {
+        marginHorizontal: 30,
+        marginTop: 10
+    },
     label: {
         fontSize: 18,
         fontFamily: fonts.primary.regular
+    },
+    boldLabel: {
+        fontSize: 18,
+        fontFamily: fonts.primary.bold
     }
 })
