@@ -22,6 +22,7 @@ import MilanDepan from './milan1.png';
 import MilanBelakang from './milan2.png';
 import MunchenDepan from './munchen1.png';
 import MunchenBelakang from './munchen2.png';
+import PhotoProfile from './profile.jpg';
 
 export {
     Logo,
@@ -48,4 +49,5 @@ export {
     MilanBelakang,
     MunchenDepan,
     MunchenBelakang,
+    PhotoProfile,
 };
