@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, Image } from 'react-native';
-import { dummyProfile } from '../../data';
+import { dummyMenu, dummyProfile } from '../../data';
 import { colors, fonts, responsiveHeight, responsiveWidth, heightMobileUI } from '../../utils';
 import { RFValue } from "react-native-responsive-fontsize";
+import { ListMenu } from '../../components';
 
 export default class Profile extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            profile: dummyProfile
+            profile: dummyProfile,
+            menus: dummyMenu
         }
     }
 
     render() {
-        const { profile } = this.state
+        const { profile, menus } = this.state
         return (
             <View style={styles.page}>
                 <View style={styles.container}>
@@ -24,6 +26,8 @@ export default class Profile extends Component {
                         <Text style={styles.desc}>No. HP: {profile.nomerHp}</Text>
                         <Text style={styles.desc}>{profile.alamat}, {profile.kota}</Text>
                     </View>
+
+                    <ListMenu menus={menus} />
                 </View>
             </View>
         )
